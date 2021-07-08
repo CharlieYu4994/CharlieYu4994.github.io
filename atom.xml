@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.charlie.moe</id>
     <title>CharlieYu4994的博客</title>
-    <updated>2021-07-08T07:37:34.966Z</updated>
+    <updated>2021-07-08T13:38:47.076Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.charlie.moe"/>
     <link rel="self" href="https://blog.charlie.moe/atom.xml"/>
@@ -48,7 +48,7 @@
 </li>
 </ol>
 <h2 id="返回以-json-为例">返回（以 JSON 为例）</h2>
-<p>我们只关心 <code>images</code> Key 的内容</p>
+<p>咱们只关心 <code>images</code> Key 的内容</p>
 <ol>
 <li><code>startdate</code>：生效时间</li>
 <li><code>fullstartdate</code>：生效时间（精确到分钟）</li>
@@ -157,9 +157,9 @@
         <link href="https://blog.charlie.moe/post/encryptedcoffee02/">
         </link>
         <updated>2020-07-21T02:24:08.000Z</updated>
-        <summary type="html"><![CDATA[<p>关于封面这个程序，它是 EncryptedCoffee 项目的一个带 GUI 的升级版本，我将其命名为 RSA&amp;AES Encryption。</p>
+        <summary type="html"><![CDATA[<p>关于封面这个程序，它是 EncryptedCoffee 项目的一个带 GUI 的升级版本，咱将其命名为 RSA&amp;AES Encryption。</p>
 ]]></summary>
-        <content type="html"><![CDATA[<p>关于封面这个程序，它是 EncryptedCoffee 项目的一个带 GUI 的升级版本，我将其命名为 RSA&amp;AES Encryption。</p>
+        <content type="html"><![CDATA[<p>关于封面这个程序，它是 EncryptedCoffee 项目的一个带 GUI 的升级版本，咱将其命名为 RSA&amp;AES Encryption。</p>
 <!-- more -->
 <h2 id="关于这个项目较-encryptedcoffee-的变化"><strong>关于这个项目较 EncryptedCoffee 的变化</strong></h2>
 <ol>
@@ -176,13 +176,13 @@
 </li>
 <li>读取大文件的优化
 <ul>
-<li>每次只读 1MiB 的数据到内存中 <s>（妈妈再也不用担心我爆内存了）</s></li>
+<li>每次只读 1MiB 的数据到内存中 <s>（妈妈再也不用担心咱爆内存了）</s></li>
 </ul>
 </li>
 </ol>
 <h2 id="最后"><strong>最后</strong></h2>
 <p>项目的 <a href="https://github.com/CharlieYu4994/RSA-AES-Encryption">地址</a><br>
-这个项目已经脱离了原来的 EncryptedCoffee，我会经量更进 EncryptedCoffee 的更新 <s>（如果 Xiao_Jin 还更新的话）</s> 。</p>
+这个项目已经脱离了原来的 EncryptedCoffee，咱会经量更进 EncryptedCoffee 的更新 <s>（如果 Xiao_Jin 还更新的话）</s> 。</p>
 ]]></content>
     </entry>
     <entry>
@@ -201,13 +201,13 @@
         <link href="https://blog.charlie.moe/post/KBD-00/">
         </link>
         <updated>2020-06-21T07:20:13.000Z</updated>
-        <summary type="html"><![CDATA[<p>出于不知名的原因，我想要完全客制化一块机械键盘，这就是这篇博客的来源了。</p>
+        <summary type="html"><![CDATA[<p>出于不知名的原因，咱想要完全客制化一块机械键盘，这就是这篇博客的来源了。</p>
 ]]></summary>
-        <content type="html"><![CDATA[<p>出于不知名的原因，我想要完全客制化一块机械键盘，这就是这篇博客的来源了。</p>
+        <content type="html"><![CDATA[<p>出于不知名的原因，咱想要完全客制化一块机械键盘，这就是这篇博客的来源了。</p>
 <h2 id="-more-进展"><!-- more --><br>
 ** 进展 **</h2>
 <p><img src="https://blog.charlie.moe/post-images/1592724271809.png" alt="" loading="lazy"><br>
-显然，现在我在全力绘制 PCB ，预计采用 nRF52840 作为主控，拥有一个显示器、四个可编程按键，采用阿米洛68键配列，大概就是这么多了，  <s>关键的固件问题，再说吧</s> 。</p>
+显然，现在咱在全力绘制 PCB ，预计采用 nRF52840 作为主控，拥有一个显示器、四个可编程按键，采用阿米洛68键配列，大概就是这么多了，  <s>关键的固件问题，再说吧</s> 。</p>
 ]]></content>
     </entry>
     <entry>
@@ -225,7 +225,7 @@
         <link href="https://blog.charlie.moe/post/leave-coffee-keys/">
         </link>
         <updated>2020-05-08T12:59:32.000Z</updated>
-        <content type="html"><![CDATA[<p>最近很烦，很难受，不想管代码了。我太烂了，烂到不行。在此正式退出 coffee-keys 团队。</p>
+        <content type="html"><![CDATA[<p>最近很烦，很难受，不想管代码了。咱太烂了，烂到不行。在此正式退出 coffee-keys 团队。</p>
 ]]></content>
     </entry>
     <entry>
@@ -247,13 +247,13 @@ zZrdD_mVLIEHtUubrd25SvGiFd-nD2sutam7Apzq0ZA
 <p>以上就是一个简单的 JWT。<br>
 很容易就可以看出来，JWT 由三个部分组成，这三个部分由「 . 」分隔开。</p>
 <ul>
-<li>第一个部分：第一个部分是 JWT 的 head（头部），包含加密方式和类型（类型始终为 JWT）。头是一个 JSON，就像下面列举的这样。然后对这个 JSON 字符串进行 Base64 编码就得到了我们的头部，当然由于我们可能要在网页中使用它，所以我们不能单纯地使用 Base64 而是要使用 Base64 的变种 Base64URL。（由于加密方式是写在 head 中的，而它又基本上是明文，这就导致了一个问题，在下文会讲到）<pre><code class="language-JSON">{
+<li>第一个部分：第一个部分是 JWT 的 head（头部），包含加密方式和类型（类型始终为 JWT）。头是一个 JSON，就像下面列举的这样。然后对这个 JSON 字符串进行 Base64 编码就得到了咱们的头部，当然由于咱们可能要在网页中使用它，所以咱们不能单纯地使用 Base64 而是要使用 Base64 的变种 Base64URL。（由于加密方式是写在 head 中的，而它又基本上是明文，这就导致了一个问题，在下文会讲到）<pre><code class="language-JSON">{
     &quot;alg&quot;: &quot;HS256&quot;,
     &quot;typ&quot;: &quot;JWT&quot;
 }
 </code></pre>
 </li>
-<li>第二个部分：第二个部分是 JWT 的payload（载荷）也就承载你的数据的地方，它也是一个 JSON，就像下面列举的这样，不必理解我写了什么内容，我们只需要知道把这个 JSON 字符串做和头部一样的操作就可以得到 JWT 的 payload 了。至于细节部分网上有很多教程。（同理 payload 也基本上是明文，所以不能存放任何敏感信息）<pre><code class="language-JSON">{
+<li>第二个部分：第二个部分是 JWT 的payload（载荷）也就承载你的数据的地方，它也是一个 JSON，就像下面列举的这样，不必理解咱写了什么内容，咱们只需要知道把这个 JSON 字符串做和头部一样的操作就可以得到 JWT 的 payload 了。至于细节部分网上有很多教程。（同理 payload 也基本上是明文，所以不能存放任何敏感信息）<pre><code class="language-JSON">{
     &quot;sub&quot;: &quot;user token&quot;,
     &quot;iss&quot;: server,
     &quot;aud&quot;: u_username,
@@ -263,7 +263,7 @@ zZrdD_mVLIEHtUubrd25SvGiFd-nD2sutam7Apzq0ZA
 }
 </code></pre>
 </li>
-<li>第三个部分：第三个部分是 JWT 的灵魂所在，他是 JWT 的 sig（签名），说是签名，我更愿意称它为检验信息，它可以保证 JWT 的内容不被修改。sig 的生成很简单我这里只列举 HS256 的实现，也就是 HMACSHA256，第一步，把我们的 head 和 payload 用「 . 」连接起来然后使用 SHA256 算法对其摘要，然后用 HMAC 算法对其加密，最后用 Base64URL 对其编码，就得到了我们的 sig，当然你也可以用其他的算法进行摘要和加密。（注：key、msg 都是 bytes 类型）<pre><code class="language-Python">      msg = f'{head}.{payload}'.encode()
+<li>第三个部分：第三个部分是 JWT 的灵魂所在，他是 JWT 的 sig（签名），说是签名，咱更愿意称它为检验信息，它可以保证 JWT 的内容不被修改。sig 的生成很简单咱这里只列举 HS256 的实现，也就是 HMACSHA256，第一步，把咱们的 head 和 payload 用「 . 」连接起来然后使用 SHA256 算法对其摘要，然后用 HMAC 算法对其加密，最后用 Base64URL 对其编码，就得到了咱们的 sig，当然你也可以用其他的算法进行摘要和加密。（注：key、msg 都是 bytes 类型）<pre><code class="language-Python">      msg = f'{head}.{payload}'.encode()
       sig = base64.b64encode(hmac.new(key, msg, digestmod=sha256).digest())
 </code></pre>
 </li>
@@ -273,7 +273,7 @@ zZrdD_mVLIEHtUubrd25SvGiFd-nD2sutam7Apzq0ZA
 <li>JWT 不会对信息做任何加密，所有信息都是可以轻松查看的。</li>
 <li>如果你的项目中使用了非对称加密，那么 JWT 的头很有可能成为重大的漏洞，攻击者可能会在头中声明加密方式是 HS256，但你使用的是 RS256，你的程序会尝试使用你的 RSA 公钥去解密签名，而公钥是大家都知道的，由此攻击者就可以自己签发 JWT，以任何身份登录。</li>
 </ol>
-<p>我能想到的只有这些了，大家可以在评论区补充</p>
+<p>咱能想到的只有这些了，大家可以在评论区补充</p>
 ]]></content>
     </entry>
     <entry>
@@ -286,7 +286,7 @@ zZrdD_mVLIEHtUubrd25SvGiFd-nD2sutam7Apzq0ZA
 ]]></summary>
         <content type="html"><![CDATA[<p>没想到这一天来得这么快，现在 EcryptedCoffee 已经有修改密码的功能了，开心ヾ(≧▽≦*)o</p>
 <!-- more -->
-<p>好了现在 EncryptedCoffee 可能会进入断更期，在五一期间我们不会做任何更新。</p>
+<p>好了现在 EncryptedCoffee 可能会进入断更期，在五一期间咱们不会做任何更新。</p>
 ]]></content>
     </entry>
 </feed>
