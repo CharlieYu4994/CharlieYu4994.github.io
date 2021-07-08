@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://blog.charlie.moe</id>
+    <title>CharlieYu4994的博客</title>
+    <updated>2021-07-08T04:51:31.739Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://blog.charlie.moe"/>
+    <link rel="self" href="https://blog.charlie.moe/atom.xml"/>
+    <subtitle>就只是博客而已&lt;br/&gt;
+是一个正太</subtitle>
+    <logo>https://blog.charlie.moe/images/avatar.png</logo>
+    <icon>https://blog.charlie.moe/favicon.ico</icon>
+    <rights>All rights reserved 2021, CharlieYu4994的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[对 Bing 美图 API 的研究 #00]]></title>
+        <id>https://blog.charlie.moe/post/BingAPI-00/</id>
+        <link href="https://blog.charlie.moe/post/BingAPI-00/">
+        </link>
+        <updated>2021-03-22T11:49:29.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="api-地址">API 地址</h2>
+<pre><code>https://cn.bing.com/HPImageArchive.aspx?format=&lt;format&gt;&amp;idx=&lt;idx&gt;&amp;n=&lt;n&gt;&amp;mkt=&lt;mkt&gt;
+</code></pre>
+<h2 id="参数">参数</h2>
+<ol>
+<li>format (required)
+<ul>
+<li>js：返回 json 响应</li>
+<li>xml：返回 xml 响应</li>
+<li>rss：返回 rss 订阅</li>
+</ul>
+</li>
+<li>idx (required)
+<ul>
+<li>1：一天前的，同理 2 为两天前的，最大为 8 返回八天的数据</li>
+</ul>
+</li>
+<li>n (required)
+<ul>
+<li>获取图片数量，最大为 8 返回包括当天的 8张图片信息</li>
+</ul>
+</li>
+<li>mkt (optional)
+<ul>
+<li>zh_CN：中国刷新的图片（过年和一些传统节日会有不同）</li>
+<li>en_US：美国刷新的图片（貌似都差不多）</li>
+<li>...</li>
+</ul>
+</li>
+</ol>
+<h2 id="返回以-json-为例">返回（以 JSON 为例）</h2>
+<p>我们只关心 <code>images</code> Key 的内容</p>
+<ol>
+<li><code>startdate</code>：生效时间</li>
+<li><code>fullstartdate</code>：生效时间（精确到分钟）</li>
+<li><code>enddate</code>：结束时间（到这天 24:00 过期)</li>
+<li><code>url</code>：标准的 1080p 分辨率的图片 url</li>
+<li><code>urlbase</code>：基准 url（加后缀可以得到不同分辨率的图片）
+<ul>
+<li>大多小于 1920x1200 分辨率的主流分辨率都可以，格式为 <code>_widthxheight.jpg</code></li>
+<li><code>_UHD.jpg</code> 为图片原始分辨率（最清晰，每天不定）</li>
+</ul>
+</li>
+<li><code>copyright</code>：版权信息</li>
+<li><code>copyrightlink</code>：Bing 搜索版权信息的地址</li>
+<li>...</li>
+</ol>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[关于 RSA&AES Encryption #00]]></title>
+        <id>https://blog.charlie.moe/post/RSA-AES-Encryption-00/</id>
+        <link href="https://blog.charlie.moe/post/RSA-AES-Encryption-00/">
+        </link>
+        <updated>2020-10-17T05:52:47.000Z</updated>
+        <content type="html"><![CDATA[<p>正在 dev 分支更新，预计今年完不成（学业繁忙）</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[关于 RSA&AES Encryption 的使用教程]]></title>
+        <id>https://blog.charlie.moe/post/RSA-AES-Encryption-guide/</id>
+        <link href="https://blog.charlie.moe/post/RSA-AES-Encryption-guide/">
+        </link>
+        <updated>2020-08-07T04:37:35.000Z</updated>
+        <summary type="html"><![CDATA[<p>本文会详细地讲解 RSA&amp;AES Encryption 的使用</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>本文会详细地讲解 RSA&amp;AES Encryption 的使用</p>
+<!-- more -->
+<h2 id="基础使用"><strong>基础使用</strong></h2>
+<ol>
+<li>下载程序
+<ul>
+<li>首先，不用多说，先在 GitHub 的 <a href="https://github.com/LassiCat/RSA-AES-Encryption/releases">Release 页面</a>下载本程序，并双击运行。</li>
+<li>文件就一个，但运行会生成「keyring.db」，这个文件储存着你的密钥，你好友的公钥，设置。请不要删除这个文件，也不要泄露这个文件。（建议将程序放在一个特定的目录中）</li>
+</ul>
+</li>
+<li>密钥生成
+<ul>
+<li>运行后你会看到一个窗口。<img src="https://blog.charlie.moe/post-images/1596776021766.png" alt="" loading="lazy"></li>
+<li>点击上方选项卡中的「杂项」，点击「生成私钥」。<img src="https://blog.charlie.moe/post-images/1596776111097.png" alt="" loading="lazy"></li>
+<li>接着会弹出一个窗口，输入你要的密码，如果你不想要密码，可以留空，输入完成后点击确定或者直接回车，按取消等同于留空。（Tips: 请确保你的密码输入正确，否则你无法使用此密钥）<img src="https://blog.charlie.moe/post-images/1596776817061.png" alt="" loading="lazy"></li>
+<li>稍等一会儿，会弹出另一个窗口，输入你的描述。（别太长，限制为 50Byte，也就是50个英文字符，或者25个中文字符）<img src="https://blog.charlie.moe/post-images/1596776836940.png" alt="" loading="lazy"></li>
+<li>生成完成后你就可以在「选择密钥」的下拉栏里找到你的密钥，选择它，会弹出一个窗口要求你输入密码，若你没有设置密码，留空或者取消，若你设置了密码输入你的密码，回车或者确定。<img src="https://blog.charlie.moe/post-images/1596776965744.png" alt="" loading="lazy"></li>
+</ul>
+</li>
+<li>管理密钥
+<ul>
+<li>点击「管理密钥」。<img src="https://blog.charlie.moe/post-images/1596777171645.png" alt="" loading="lazy"></li>
+<li>接着会弹出一个窗口。<img src="https://blog.charlie.moe/post-images/1596777350489.png" alt="" loading="lazy"></li>
+<li>在「私钥」栏，点击选择密钥，双击可以更改描述，回车可以修改密码，shift + 回车可以导出你的私钥，点击下方的「删除」可以删除密钥，「导出」可以导出你的公钥，「导入」可以从文件导入密钥（密钥的类型程序会自行判断）。</li>
+<li>在「公钥」栏，点击选择密钥，双击可以更改描述，三个按钮同上。</li>
+<li>「导入」按钮：点击「导入」按钮会弹出一个窗口用于选择文件，你只要选择密钥文件即可。<img src="https://blog.charlie.moe/post-images/1596777739807.png" alt="" loading="lazy">然后程序会弹出一个窗口要求你输入描述。</li>
+<li>「导出」按钮：点击「导出」按钮会弹出一个类似的窗口用于保存密钥文件，请务必记得输入文件名。</li>
+</ul>
+</li>
+<li>加密文本
+<ul>
+<li>选择标签栏的「文本加/解密」。</li>
+<li>先确保，你已经得到了你好友的公钥，然后在「收/发件人」下拉栏里选择收件人。（当然你也可以导出自己的公钥，再导入，你就可以在「收/发件人」下拉栏里找到你自己的公钥了）<img src="https://blog.charlie.moe/post-images/1596778594948.png" alt="" loading="lazy"></li>
+<li>在输入框里输入你要发送的文本，然后点击「加密」按钮，就会弹出一个窗口，里面有加密的结果，你可以点击「复制」按钮复制密文并发送给你的好友，完成后你可以点击确定或者直接关掉这个窗口。（你可以通过「签名」复选框选择是否签名签名可以保证信息的可信度，但会增加密文的长度）<img src="https://blog.charlie.moe/post-images/1596778838876.png" alt="" loading="lazy"></li>
+</ul>
+</li>
+<li>解密文本
+<ul>
+<li>选择标签栏的「文本加/解密」。</li>
+<li>和加密文本一样，选择发件人的公钥，然后把收到的密文完完全全地复制到输入框内。（请确保输入框原本是空的）。</li>
+<li>点击「解密」按钮，这会弹出一个窗口，你就可以得到密文的内容了。</li>
+<li>如果显示签名无效，有可能是你选错了发件人，也可能是对方没有签名。<img src="https://blog.charlie.moe/post-images/1596779370064.png" alt="" loading="lazy"></li>
+</ul>
+</li>
+<li>加密文件
+<ul>
+<li>选择标签栏的「文件加/解密」。<img src="https://blog.charlie.moe/post-images/1596779809154.png" alt="" loading="lazy"></li>
+<li>密钥选择与之前类似。</li>
+<li>点击「选择文件」按钮，选择你的文件，再点击「选择目录」选择保存路径，最后点击「加密」按钮，这会弹出一个窗口要求你输入文件名，输入完成后点击确定，就可以开始加密了，加密完成后会弹出一个窗口，点击「打开」按钮就可以打开保存路径，生成的文件的后缀是 ref。 <img src="https://blog.charlie.moe/post-images/1596780346977.png" alt="" loading="lazy"></li>
+</ul>
+</li>
+<li>解密文件
+<ul>
+<li>选择标签栏的「文件加/解密」。</li>
+<li>操作同上，选择加密过的文件，点击「解密」按钮，然后就会弹出一个窗口。<img src="https://blog.charlie.moe/post-images/1596780725126.png" alt="" loading="lazy"></li>
+</ul>
+</li>
+<li>简单配置
+<ul>
+<li>参照第一张生成密钥的图片，你可以设置 coffee-keys 的网址，默认保存路径和默认使用的私钥</li>
+<li>点击「保存」，就可以保存设置</li>
+</ul>
+</li>
+</ol>
+<h2 id="进阶使用"><strong>进阶使用</strong></h2>
+<p>你可以发现，程序是使用一个数据库储存所有信息的，你可以使用一些工具打开这个数据库</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[关于 EncryptedCoffee #02]]></title>
+        <id>https://blog.charlie.moe/post/encryptedcoffee02/</id>
+        <link href="https://blog.charlie.moe/post/encryptedcoffee02/">
+        </link>
+        <updated>2020-07-21T02:24:08.000Z</updated>
+        <summary type="html"><![CDATA[<p>关于封面这个程序，它是 EncryptedCoffee 项目的一个带 GUI 的升级版本，我将其命名为 RSA&amp;AES Encryption。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>关于封面这个程序，它是 EncryptedCoffee 项目的一个带 GUI 的升级版本，我将其命名为 RSA&amp;AES Encryption。</p>
+<!-- more -->
+<h2 id="关于这个项目较-encryptedcoffee-的变化"><strong>关于这个项目较 EncryptedCoffee 的变化</strong></h2>
+<ol>
+<li>这个项目抛弃了原有的一些轮子
+<ul>
+<li>抛弃了原有用于 RSA 实现的 RSA 轮子，改为使用 pycryptodome</li>
+<li>抛弃了用于剪切板操作的 pywin32， 改为使用 pyperclip</li>
+</ul>
+</li>
+<li>最重要的一点，这个项目现在拥有 GUI 了
+<ul>
+<li>采用 Tkinter 编写的 GUI <s>（Tkinter 写的想要特别好看就算了吧）</s></li>
+</ul>
+</li>
+<li>读取大文件的优化
+<ul>
+<li>每次只读 1MiB 的数据到内存中 <s>（妈妈再也不用担心我爆内存了）</s></li>
+</ul>
+</li>
+</ol>
+<h2 id="最后"><strong>最后</strong></h2>
+<p>项目的 <a href="https://github.com/CharlieYu4994/RSA-AES-Encryption">地址</a><br>
+这个项目已经脱离了原来的 EncryptedCoffee，我会经量更进 EncryptedCoffee 的更新 <s>（如果 Xiao_Jin 还更新的话）</s> 。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[合格考全部拿下]]></title>
+        <id>https://blog.charlie.moe/post/pass/</id>
+        <link href="https://blog.charlie.moe/post/pass/">
+        </link>
+        <updated>2020-07-11T13:05:16.000Z</updated>
+        <content type="html"><![CDATA[<!-- more -->
+<figure data-type="image" tabindex="1"><img src="https://blog.charlie.moe/post-images/1594472796571.jfif" alt="" loading="lazy"></figure>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[关于机械键盘的瞎整活]]></title>
+        <id>https://blog.charlie.moe/post/KBD-00/</id>
+        <link href="https://blog.charlie.moe/post/KBD-00/">
+        </link>
+        <updated>2020-06-21T07:20:13.000Z</updated>
+        <summary type="html"><![CDATA[<p>出于不知名的原因，我想要完全客制化一块机械键盘，这就是这篇博客的来源了。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>出于不知名的原因，我想要完全客制化一块机械键盘，这就是这篇博客的来源了。</p>
+<h2 id="-more-进展"><!-- more --><br>
+** 进展 **</h2>
+<p><img src="https://blog.charlie.moe/post-images/1592724271809.png" alt="" loading="lazy"><br>
+显然，现在我在全力绘制 PCB ，预计采用 nRF52840 作为主控，拥有一个显示器、四个可编程按键，采用阿米洛68键配列，大概就是这么多了，  <s>关键的固件问题，再说吧</s> 。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[宣传第一弹]]></title>
+        <id>https://blog.charlie.moe/post/spread00/</id>
+        <link href="https://blog.charlie.moe/post/spread00/">
+        </link>
+        <updated>2020-05-23T12:01:24.000Z</updated>
+        <content type="html"><![CDATA[<p>绘里姐姐的 TG 群：http://t.me/kagurazakaeri_new</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[关于 Coffee-keys]]></title>
+        <id>https://blog.charlie.moe/post/leave-coffee-keys/</id>
+        <link href="https://blog.charlie.moe/post/leave-coffee-keys/">
+        </link>
+        <updated>2020-05-08T12:59:32.000Z</updated>
+        <content type="html"><![CDATA[<p>最近很烦，很难受，不想管代码了。我太烂了，烂到不行。在此正式退出 coffee-keys 团队。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[关于 JWT]]></title>
+        <id>https://blog.charlie.moe/post/jwt-00/</id>
+        <link href="https://blog.charlie.moe/post/jwt-00/">
+        </link>
+        <updated>2020-05-05T11:10:15.000Z</updated>
+        <summary type="html"><![CDATA[<p>关于 JWT 网上有很多介绍，这里就不多做介绍了，简而言之 JWT 就是一个身份证，证明你是你。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>关于 JWT 网上有很多介绍，这里就不多做介绍了，简而言之 JWT 就是一个身份证，证明你是你。</p>
+<!-- more -->
+<h1 id="结构和实现">结构和实现</h1>
+<pre><code>e2FsZyI6ICJIUzI1NiIsInR5cCI6ICJKV1QifQ.
+eyJzdWIiOiAidXNlciB0b2tlbiIsICJpc3MiOiAiIiwgImF1ZCI6ICIxMTExIiwgInV1aWQiOi
+AiMTExMSIsICJpYXQiOiAxNTg4Njc3NTA1Mjc3LCAiZXhwIjogMTU4ODY3NzUwNjI3N30.
+zZrdD_mVLIEHtUubrd25SvGiFd-nD2sutam7Apzq0ZA
+</code></pre>
+<p>以上就是一个简单的 JWT。<br>
+很容易就可以看出来，JWT 由三个部分组成，这三个部分由「 . 」分隔开。</p>
+<ul>
+<li>第一个部分：第一个部分是 JWT 的 head（头部），包含加密方式和类型（类型始终为 JWT）。头是一个 JSON，就像下面列举的这样。然后对这个 JSON 字符串进行 Base64 编码就得到了我们的头部，当然由于我们可能要在网页中使用它，所以我们不能单纯地使用 Base64 而是要使用 Base64 的变种 Base64URL。（由于加密方式是写在 head 中的，而它又基本上是明文，这就导致了一个问题，在下文会讲到）<pre><code class="language-JSON">{
+    &quot;alg&quot;: &quot;HS256&quot;,
+    &quot;typ&quot;: &quot;JWT&quot;
+}
+</code></pre>
+</li>
+<li>第二个部分：第二个部分是 JWT 的payload（载荷）也就承载你的数据的地方，它也是一个 JSON，就像下面列举的这样，不必理解我写了什么内容，我们只需要知道把这个 JSON 字符串做和头部一样的操作就可以得到 JWT 的 payload 了。至于细节部分网上有很多教程。（同理 payload 也基本上是明文，所以不能存放任何敏感信息）<pre><code class="language-JSON">{
+    &quot;sub&quot;: &quot;user token&quot;,
+    &quot;iss&quot;: server,
+    &quot;aud&quot;: u_username,
+    &quot;uuid&quot;: u_uuid,
+    &quot;iat&quot;: u_time,
+    &quot;exp&quot;: u_time + exp * 1000
+}
+</code></pre>
+</li>
+<li>第三个部分：第三个部分是 JWT 的灵魂所在，他是 JWT 的 sig（签名），说是签名，我更愿意称它为检验信息，它可以保证 JWT 的内容不被修改。sig 的生成很简单我这里只列举 HS256 的实现，也就是 HMACSHA256，第一步，把我们的 head 和 payload 用「 . 」连接起来然后使用 SHA256 算法对其摘要，然后用 HMAC 算法对其加密，最后用 Base64URL 对其编码，就得到了我们的 sig，当然你也可以用其他的算法进行摘要和加密。（注：key、msg 都是 bytes 类型）<pre><code class="language-Python">      msg = f'{head}.{payload}'.encode()
+      sig = base64.b64encode(hmac.new(key, msg, digestmod=sha256).digest())
+</code></pre>
+</li>
+</ul>
+<h1 id="关于隐患">关于隐患</h1>
+<ol>
+<li>JWT 不会对信息做任何加密，所有信息都是可以轻松查看的。</li>
+<li>如果你的项目中使用了非对称加密，那么 JWT 的头很有可能成为重大的漏洞，攻击者可能会在头中声明加密方式是 HS256，但你使用的是 RS256，你的程序会尝试使用你的 RSA 公钥去解密签名，而公钥是大家都知道的，由此攻击者就可以自己签发 JWT，以任何身份登录。</li>
+</ol>
+<p>我能想到的只有这些了，大家可以在评论区补充</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[关于 EncryptedCoffee #01]]></title>
+        <id>https://blog.charlie.moe/post/encryptedcoffee01/</id>
+        <link href="https://blog.charlie.moe/post/encryptedcoffee01/">
+        </link>
+        <updated>2020-05-01T07:42:10.000Z</updated>
+        <summary type="html"><![CDATA[<p>没想到这一天来得这么快，现在 EcryptedCoffee 已经有修改密码的功能了，开心ヾ(≧▽≦*)o</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>没想到这一天来得这么快，现在 EcryptedCoffee 已经有修改密码的功能了，开心ヾ(≧▽≦*)o</p>
+<!-- more -->
+<p>好了现在 EncryptedCoffee 可能会进入断更期，在五一期间我们不会做任何更新。</p>
+]]></content>
+    </entry>
+</feed>
