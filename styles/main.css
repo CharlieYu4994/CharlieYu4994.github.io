@@ -2200,7 +2200,31 @@ pre > span.copy-code:hover {
     }
     .mist .site-title i {
       background: #FFFFFFe5;
-    }.custom:hover{color:pink}.bg-img img {
+    }.custom:hover {
+    color: pink
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 1px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #fc6423;
+    background-image: -webkit-linear-gradient(45deg,
+            rgba(255, 255, 255, 0.2) 25%,
+            transparent 25%,
+            transparent 50%,
+            rgba(255, 255, 255, 0.2) 50%,
+            rgba(255, 255, 255, 0.2) 75%,
+            transparent 75%,
+            transparent);
+}
+
+::-webkit-scrollbar-track {
+ color: transparent;
+}.bg-img img {
         filter: blur(2px)
       }.box-shadow-wrapper {
       box-shadow: none !important;
